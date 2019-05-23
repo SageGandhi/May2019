@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Server-side Events</title>
+</head>
+<body>
+	<ul></ul>
+	<script type="text/javascript">
+		if (!!window.EventSource) {
+			var eventSource = new EventSource(
+					"api/v1/products/server-side-event");
+			var eventUnOrderedList = document.querySelector('ul');
+			eventSource.onmessage = function(event) {
+				var liElement = document.createElement("li");
+				liElement.textContent = "Event: " + event.data;
+				console.log(liElement.textContent);
+				eventUnOrderedList.appendChild(liElement);
+			}
+		} else {
+			console.log("The Browser Doesn't Support Server Sent Event");
+		}
+	</script>
+</body>
+</html>
