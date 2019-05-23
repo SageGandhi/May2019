@@ -3,7 +3,6 @@ package edu.gandhi.prajit;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
-import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
 public class WebClientUsage {
@@ -15,10 +14,8 @@ public class WebClientUsage {
 		assertThat(WebClient.create().mutate().baseUrl("http://localhost:8080/api/v2/products").build()).isNotNull();
 	}
 	@Test
-	public void getRequestWebClient() {
+	public void getRequestWebClient() throws Exception {
 //		BodyInserters.fromMultipartData/BodyInserters.fromFormData
-//		For File Use org.springframework.http.client.MultipartBodyBuilder/org.springframework.core.io.FileSystemResource
-		final WebClient webClient = WebClient.create("http://localhost:8080/api/v2/products");
-		webClient.get().accept(MediaType.APPLICATION_JSON).exchange().subscribe(System.out::println);
+//		For File Use org.springframework.http.client.MultipartBodyBuilder/org.springframework.core.io.FileSystemResource		
 	}
 }
