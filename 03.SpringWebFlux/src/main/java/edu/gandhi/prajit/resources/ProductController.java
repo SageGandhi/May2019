@@ -4,7 +4,6 @@ import java.text.MessageFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -26,8 +25,11 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/api/v1/products")
 public class ProductController {
-	@Autowired
 	private ProductRepostory productRepostory;
+
+	public ProductController(ProductRepostory productRepostory) {
+		this.productRepostory = productRepostory;
+	}
 
 	@GetMapping
 	public Flux<Product> findAllProducts() {
