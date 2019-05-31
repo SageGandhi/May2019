@@ -26,4 +26,4 @@ Pattern sixLetterWord = ~/\w{6}/;println sixLetterWord.isCase("Prajit");println 
 	}
 }
 println "All Six Letter Word".plus(["Prajit","Learns","Groovy","First","Time"].grep(sixLetterWord));
-10..15.each { item->println "Item:${item}"}
+(10..15).eachWithIndex { item,index->println "Item:${item}@Index:${index}"}//Page:125
