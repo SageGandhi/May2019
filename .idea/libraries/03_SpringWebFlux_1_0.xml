@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="03.SpringWebFlux-1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/03.SpringWebFlux/target/03.SpringWebFlux-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
