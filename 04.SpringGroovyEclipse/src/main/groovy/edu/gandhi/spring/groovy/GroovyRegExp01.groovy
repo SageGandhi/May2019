@@ -76,7 +76,10 @@ def quickSort(arrToSort) {
 	return quickSort(leftSubList).plus(middleEqToPivot).plus(quickSort(rightSubList));
 }
 println "Sorting Using QuickSort:${quickSort([10,100,20,90,30,80])}"
-println "${[new URL('http', 'prajit.gandhi.com', 80, 'index.html'),\
-	new URL('https', 'prajit.gandhi.com', 443, 'signout.html'),\
-	new URL('ftp', 'prajit.gandhi.com', 21, 'downloads')\
-].findAll {it.port<100}.collect {it.file.toLowerCase()}.sort()}"//Page 142
+println """${[new URL('http', 'prajit.gandhi.com', 80, 'index.html'),
+	new URL('https', 'prajit.gandhi.com', 443, 'signout.html'),
+	new URL('ftp', 'prajit.gandhi.com', 21, 'downloads')
+].findAll {it.port<100}.collect {it.file.toLowerCase()}.sort()}"""//Page 142,MultiLine
+def devAppsPath = $/C:/Programs/Prajit/DevApps/$;println "DollarSlashy:${devAppsPath}|${devAppsPath.class}"
+devAppsPath = /C:\Programs\Prajit\DevApps/;println "Slashy:${devAppsPath}|${devAppsPath.class}"
+//=~ Find,==~ Matcher,= ~ Pattern
